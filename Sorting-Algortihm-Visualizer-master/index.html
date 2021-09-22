@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="/icons/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Sorting Algorithm Visualizer</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="header__text">
+        <h1 style="color:white"> Sorting algorithm Visualizer</h1>
+        <nav>
+            <div class="array-inputs ">
+                <p style="color: white;">Size of the array:</p>
+                <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                <p style="color: white;">Speed of the algorithm:</p>
+                <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                <button class="btn btn-success" id="a_generate">Generate Random Array</button>
+
+                <button class="btn btn-danger" id="reset"><a href="#"></a>Stop</button>
+            </div>
+
+            <div class="header_right" style="background-color: black;">
+                <p class="nav-heading"></p>
+
+                <div class="algos">
+                    <button>Bubble</button>
+                    <button>Selection</button>
+                    <button>Insertion</button>
+                    <button>Merge</button>
+                    <button>Quick</button>
+                    <button>Heap</button>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+
+    <section>
+
+        <div id="Info_Cont1">
+            <div class="sort">
+                <h1>Bubble Sort</h1>
+                <p>Time complexity : 0(n2)</p>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#bubblesort">
+                    Read more
+                </button>
+
+            </div>
+            <div class="sort">
+                <h1>Selection Sort</h1>
+                <p>Time complexity : 0(n2)</p>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#selectionsort">
+                    Read more
+                </button>
+
+            </div>
+            <div class="sort">
+                <h1>Insertion Sort</h1>
+                <p>Time complexity : 0(n2)</p>
+
+                <button 
+                ;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#insertionsort">
+                    Read more
+                </button>
+
+            </div>
+        </div>
+
+        <div id="array_container">
+
+        </div>
+
+        <div id="Info_Cont2">
+            <div class="sort">
+                <h1>Merge Sort</h1>
+                <p>Time complexity : 0(nlogn)</p>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#mergesort">
+                    Read more
+                </button>
+
+            </div>
+            <div class="sort">
+                <h1>Quick Sort</h1>
+                <p>Time complexity : 0(n2)</p>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#quicksort">
+                    Read more
+                </button>
+
+            </div>
+            <div class="sort">
+                <h1>heap Sort</h1>
+                <p>Time complexity : 0(nlog(n)</p>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#heapsort">
+                    Read more
+                </button>
+
+            </div>
+        </div>
+
+    </section>
+   
+    <div class="modal fade" id="bubblesort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bubble Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> It’s a sorting algorithm, in which each pair of adjacent items are compared and swapped if they are in wrong order. The comparison is repeated until no swaps are needed, indicating that the list is sorted. The smaller elements ‘bubble’ to the top of the list, hence, the name Bubble Sort. In this like selection sort, after every pass the largest element moves to the highest index position of the list.</p>
+                    <p>Properties:</p>
+
+                    <p>1. Best Case performance – When the list is already sorted, we require only one pass to check, hence O(n).</p>
+<p>2. Worst Case performance – When the list is in the reverse order, n number of comparisons and swap are required to be done n number of times, hence O(n2).</p>
+<p>3. Average Case performance – O(n2)</p>
+<p>>4. It does not require any extra space for sorting, hence O(1) extra space.</p> <a
+                        href="https://en.wikipedia.org/wiki/Bubble_sort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="quicksort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Quick Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Quick Sort is divide and conquer algorithm like Merge Sort. Unlike Merge Sort this does not require extra space. So it sorts in place. Here dividing step is to chose a pivot and partition the array such that all elements less than or equal to pivot are to the left of it and all the elements which are greater than or equal to the pivot are to the right of it. Recursively sort the left and right parts.</p>. 
+                    <p>Properties</p>
+                    <p>
+                        1. Best case performance – When the partitioning produces two regions of size n/2 (where,
+n is the total number of elements in the list) O(nlgn).
+</p>
+<p>2. Worst case performance - When the partitioning produces one region of size n-1 (where,
+n is the total number of elements in the list) and other of size 1 O(n2).</p>
+<p>3. Average case – O(n(lgn))</p>
+<p>4. It is not stable and uses O(lg(n)) extra space in the worst case.</p>
+                    </p>
+                    
+                    <a href="https://en.wikipedia.org/wiki/Selection_sort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="insertionsort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Insertion Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <p> Insertion sort uses linear search to find the location of the 1st element in the unsorted list, in the sorted portion of the list. It is an elementary sorting algorithm best used to sort small data sets or insert a new element in the sorted list.</p>
+                   Properties:</p>
+                <p>1. Best case performance – When the array is already sorted O(n). Total number of comparisons: N – 1 and total number of exchanges: N – 1.</p>
+            <p>2. Worst case performance – When the array is sorted in reverse order O(n2). N-1 iterations of comparison and exchanges.</p>
+        <p>3. Average case performance – O(n2)</p>
+    <p>4. It is sensitive to the input as the number of comparison and exchanges depends on the input.</p>
+<p>5. It does not require any extra space for sorting, hence O(1) extra space.</p>
+<a
+                        href="https://en.wikipedia.org/wiki/Insertion_sort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="selectionsort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Selection Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>The idea of the selection sort is to find the smallest element in the list and exchange it with the element in the first position. Then, find the second smallest element and exchange it with the element in the second position, and so on until the entire array is sorted.</p>
+                    <p>Properties</p>
+                    <p>
+                        Best case performance – When the list is already sorted O(n2).
+                    </p>
+                    <p>
+                        Worst case performance - When the list is sorted in reverse order O(n2).
+                    </p>
+                    <p>Average case performance – O(n2).</p>
+                    <p>
+                        It does not require any extra space for sorting, hence O(1) extra space.
+It is not stable.
+                    </p>
+                    <p>O(n2) time complexity makes it difficult for long lists.</p>
+                    <a
+                        href="https://en.wikipedia.org/wiki/merge_sort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mergesort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Merge Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Merge sort is based on Divide and conquer method. It takes the list to be sorted and divide it in half to create two unsorted lists. The two unsorted lists are then sorted and merged to get a sorted list. The two unsorted lists are sorted by continually calling the merge-sort algorithm; we eventually get a list of size 1 which is already sorted. The two lists of size 1 are then merged.
+
+<p>Properties</p>                    <p>Best case – When the array is already sorted O(nlogn).</p>
+<p>Worst case – When the array is sorted in reverse order O(nlogn). </p>
+<p>Average case – O(nlogn).</p>
+<p>Extra space is required, so space complexity is O(n) for arrays and O(logn) for linked lists.</p> <a
+                        href="https://en.wikipedia.org/wiki/Quick_sort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="heapsort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Heap Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Heap sort is one of the sorting algorithms used to arrange a list of elements in order. Heapsort
+                    algorithm uses one of the tree concepts called Heap Tree. In this sorting algorithm, we use Max Heap
+                    to arrange list of elements in Descending order and Min Heap to arrange list elements in Ascending
+                    order.
+
+                    Step by Step Process
+
+                    The Heap sort algorithm to arrange a list of elements in ascending order is performed using
+                    following steps...
+
+                    <p>Step 1 - Construct a Binary Tree with given list of Elements.</p>
+                    <p>Step 2 - Transform the Binary Tree into Min Heap.</p>
+                    <p>Step 3 - Delete the root element from Min Heap using Heapify method.</p>
+                    <p>Step 4 - Put the deleted element into the Sorted list.</p>
+                    <p>Step 5 - Repeat the same until Min Heap becomes empty.</p>
+                    <p>Step 6 - Display the sorted list.
+                    <a href="https://en.wikipedia.org/wiki/Heapsort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/visualizations.js"></script>
+
+    <script src="./scripts/bubble_sort.js"></script>
+    <script src="./scripts/selection_sort.js"></script>
+    <script src="./scripts/insertion_sort.js"></script>
+    <script src="./scripts/merge_sort.js"></script>
+    <script src="./scripts/quick_sort.js"></script>
+    <script src="./scripts/heap_sort.js"></script>
+
+    
+</body>
+
+</html>
